@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>successPage</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+<link rel="StyleSheet" href="css/myStyle.css">
+</head>
+<body>
+	<div class="container successLogin">
+		<div class="row justify-content-center">
+			<div class="col-md-6 text-center">
+				<div th:if="${user} == success">
+					<h3>Successfully Logged in.</h3>
+					<a class="btn btn-outline-secondary" href="/">Log Out.</a>
+				</div>
+				<div th:if="${user} == failed">
+					<h3>Failed.</h3>
+				</div>
+				<div th:if="${user} == exist">
+					<h3>Email Already Exists.</h3>
+				</div>
+				<div th:if="${user} == successRegister">
+					<h3>Successfully Registration done.</h3>
+					<a class="btn btn-outline-secondary" href="/login">Log in.</a>
+				</div>
+				<div th:if="${user} == mismatch">
+					<h3>Password Mismatch Try again.</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

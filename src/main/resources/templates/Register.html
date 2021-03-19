@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>RegisterName</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+	crossorigin="anonymous">
+<link rel="StyleSheet" href="css/myStyle.css">
+</head>
+<body>
+<div class="container ">
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+		<h2 class="text-center py-5">Registration Form.</h2>
+		 	<form action="#" th:action="@{/saveUser}" th:object="${register}" method="post">
+		<table class="table text-center mt-5">
+			<tr>
+				<td>User Name :</td>
+				<td><input type="text" th:field="*{username}"
+					required="required" placeholder="eg:Vijay" /></td>
+			</tr>
+			<tr>
+				<td>email:</td>
+				<td><input type="email" th:field="*{email}" required="required"
+					placeholder="eg:Vijay@gmail.com" /></td>
+			</tr>
+			<tr>
+				<td>password:</td>
+				<td><input type="password" th:field="*{password}"
+					required="required" placeholder="eg:******" /></td>
+			</tr>
+			<tr>
+				<td>confirm password:</td>
+				<td><input type="password" th:field="*{confirmpassword}"
+					required="required" placeholder="eg:****" /></td>
+			</tr>
+			<tr>
+				<td>contact:</td>
+				<td><input type="tel" th:field="*{contact}" required="required"
+					placeholder="eg:9000080000"  /></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td>
+					<span>
+						<input type="radio" th:field="*{gender}" id="option1" value="Male" required="required">
+						<label for="option1">Male</label>
+					</span>
+					<span>
+						<input type="radio" th:field="*{gender}" id="option2"
+							value="Female"> <label for="option2">Female</label>
+					</span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"><button class="btn btn-outline-secondary" type="submit">Save</button></td>
+			</tr>
+		</table>
+	</form>
+		</div>
+	</div>
+</div>
+
+	
+</body>
+</html>
